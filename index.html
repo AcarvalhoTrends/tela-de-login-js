@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"> 
+    <title>LOGIN</title>
+    <style>
+        body { /* aqui definimimos o corpo do dom*/
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(135deg, #222, #1a2a6c);  
+            background-attachment: fixed;
+            color: #FFFFFF;
+            font-family: sans-serif;
+            font-size: 18px;
+            margin: 0;
+            height: 100vh;
+        }
+
+        body::before {       /* aqui definimimos colamos uma imagem de fundo  */
+            content: "";
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 27%;  
+            height: 100%;
+            background-image: url("uf.jpg");
+            background-size: cover;
+            background-position: left center;
+            background-repeat: no-repeat;
+            opacity: 0.2; 
+            z-index: -1; 
+        } 
+
+        .login-container { /*aqui basicamente é o nosso espaço de login, onde os elementos de input e bottom pertecem a ele */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-width: 30%;
+                width: 25%;
+                padding: 40px;
+                border: 4px solid lightgoldenrodyellow;
+                border-radius: 5px;
+                background-color: rgba(0, 0, 0, 0.2);
+                margin-right: 100px;
+                margin-top: -70px;
+}
+        
+
+        .logo-tipo { /*nosso logo tipo*/
+                width: 320px;
+                margin-right: 100px;
+                margin-top: -50px;
+        } 
+
+        form { width: 100%; } /*aqui eu vou definir que os meus campos ocupem 100% da linha */  
+
+        .password-wrapper { /*ajustando a posição do meu campo senha*/
+            position: relative;
+            width: 100%;
+        }
+
+        .password-wrapper i { /*aqui ajustamos o nosso olho para ver a senha*/
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #333;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        input {
+            width: 100%;        
+            padding: 12px;        
+            margin: 8px 0;
+            background-color: ghostwhite;
+            border-radius: 4px;
+            color: #333;         
+            border: none;
+            box-sizing: border-box; 
+        }
+
+        /* ESPAÇO ESTÁTICO PARA O ERRO */
+        #mensagem-erro {
+            height: 25px; /* Reserva o espaço fixo */
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: center;
+            font-weight: bold;
+            transition: opacity 0.3s; /* Suave sem mover nada */
+        }
+
+        .botao-colorido {
+            left: auto;
+            background: linear-gradient(to bottom, #ffce84, #FFB951);
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 16px;
+            width: 40%;
+            cursor: pointer;
+            color: #222;
+            font-weight: bold;
+            margin-top: 10px;
+            display: flex;
+            margin: auto;
+            margin-top: 30px;
+            }
+        
+
+        a {
+                text-decoration: none;
+                color: skyblue;
+                font-size: 14px;
+                display: flex;
+                text-align: center;
+
+            }
+     @media (max-width: 768px) {
+        .login-container { /*garante que esteja responsivel */
+            flex-direction: column;
+            align-items: center; 
+            width: 73%;
+            padding:  0 20px;
+            margin-right: 0; 
+            height: 60%;
+             
+        }
+
+        .logo-tipo {
+            max-width: 100%; /* Garante que a imagem não transborde */
+            height: auto;
+            margin-right: 0; 
+        }
+    }
+ 
+    </style>
+</head>
+<body>
+    <img src="asd.png" class="logo-tipo" alt="Logo">
+    <div class="login-container">   
+        <h1>Login</h1>                                                
+        <form id="formLogin">
+            <label for="credencial">Usuário:</label>
+            <input type="text" id="credencial" placeholder="e-mail ou CPF" required>
+
+            <label for="password">Senha:</label>
+            <div class="password-wrapper">
+                <input type="password" id="password" placeholder="Sua senha" required>
+                <i class="bi bi-eye-fill" id="btn-senha"></i> 
+            </div>
+
+            <div id="mensagem-erro"></div>
+
+            <a href="rebecere.html">Receber link de acesso por e-mail.</a>
+            <input class="botao-colorido" id="btn-login" type="submit" value="Entrar">
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
